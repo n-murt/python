@@ -1,19 +1,22 @@
-mol = [int(x) for x in input().split()]
-n = mol[0]
-m = mol[1]
-set_1 = set()
-set_2 = set()
-list_1 = list()
-a = [int(x) for x in input().split()]
-k = set(a)
-for i in k:
-    set_1.add(i)
-b = [int(x) for x in input().split()]
-k1 = set(b)
-for i in k1:
-    set_2.add(i)
-lok = set_1 & set_2
-kool = list(lok)
-kool.sort()
-for i in kool:
-    print(i, end=' ')
+from random import randint
+
+# Вводим размеры наборов данных
+n = int(input('Введите размер набора1 N:'))
+m = int(input('Введите размер набора2 M:'))
+# Объявляем наборы данных
+list1 = []
+list2 = []
+# Наполняем наборы данных
+for i in range(n):
+    list1.append(randint(1, 9))
+for i in range(m):
+    list2.append(randint(1, 9))
+print("Набор данных1:", list1[:])
+print("Набор данных2:", list2[:])
+# Переводим списки в множества
+set1 = set(list1)
+set2 = set(list2)
+# Объединяем множества
+merge = set1 & set2
+# Выводим без повторений в порядке возрастания числа из множества
+print("Результат:", sorted(merge))
