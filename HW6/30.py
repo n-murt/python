@@ -1,5 +1,14 @@
-a1 = int(input())
-d = int(input())
-n = int(input())
+# Вводим первый элемент, разность и количество элементов
+a = int(input('Введите первый элемент:'))
+d = int(input('Введите разность арифметической прогрессии:'))
+n = int(input('Введите количество элементов:'))
+# Объявляем массив
+result = []
+# Наполняем массив
 for i in range(n):
-    print(a1 + i * d)
+    result.append(a + i*d)
+# Перебираем массив
+for i in range(len(result)):
+    # Выводим результат
+    print(result[i])
+    
