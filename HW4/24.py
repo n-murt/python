@@ -1,11 +1,15 @@
-n = int(input())
-arr = list()
-for i in range(n):
-    x = int(input())
-    arr.append(x)
+# Вводим A и B
+a = int(input('Введите A:'))
+b = int(input('Введите B:'))
 
-arr_count = list()
-for i in range(len(arr) - 1):
-    arr_count.append(arr[i-1]+arr[i]+arr[i+1])
-arr_count.append(arr[-2]+arr[-1]+arr[0])
-print(max(arr_count))
+
+# Функция возведения в сепень
+def power(a, b):
+    if b == 0:
+        return 1
+    # Рекурсивно умножаем a на a уменьшая b на 1, пока b не будет равно 0
+    return (a * power(a, b - 1))
+
+
+# Выводим результат
+print("Результат:", power(a, b))
